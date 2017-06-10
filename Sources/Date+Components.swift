@@ -54,6 +54,10 @@ public extension Int {
 
 // MARK: - Date components
 
+public enum Weekday: Int {
+  case monday = 0, tuesday, wednesday, thursday, friday, saturday, sunday
+}
+
 public extension Date {
 
   public var second: Int {
@@ -78,6 +82,14 @@ public extension Date {
 
   public var year: Int {
     return Calendar.current.component(.year, from: self)
+  }
+
+  public var weekday: Weekday {
+    guard let weekday = Weekday(rawValue: (Calendar.current.component(.weekday, from: self) + 12) % 7) else {
+      assertionFailure()
+      return .monday
+    }
+    return weekday
   }
 
 }
