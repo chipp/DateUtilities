@@ -23,12 +23,20 @@ public extension Date {
     return today - 1.days
   }
 
+  public var yesterday: Date {
+    return self - 1.days
+  }
+
   public static var today: Date {
     return Date().start(of: .day)
   }
 
   public static var tomorrow: Date {
     return today + 1.days
+  }
+
+  public var tomorrow: Date {
+    return self + 1.days
   }
 
   public var isInYesterday: Bool {
