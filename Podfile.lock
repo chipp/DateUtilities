@@ -1,0 +1,19 @@
+PODS:
+  - DateUtilities (1.0.0)
+  - Nimble (7.0.1)
+
+DEPENDENCIES:
+  - DateUtilities (from `.`)
+  - Nimble (~> 7.0)
+
+EXTERNAL SOURCES:
+  DateUtilities:
+    :path: "."
+
+SPEC CHECKSUMS:
+  DateUtilities: f4e58fddb3b0453a2072d539e329c961f51d5c45
+  Nimble: 657d000e11df8aebe27cdaf9d244de7f30ed87f7
+
+PODFILE CHECKSUM: 278b4b3b85651310df8de18d6550428314e13f40
+
+COCOAPODS: 1.2.1
