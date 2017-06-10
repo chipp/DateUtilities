@@ -56,27 +56,27 @@ public extension Int {
 
 public extension Date {
 
-  public var seconds: Int {
+  public var second: Int {
     return Calendar.current.component(.second, from: self)
   }
 
-  public var minutes: Int {
+  public var minute: Int {
     return Calendar.current.component(.minute, from: self)
   }
 
-  public var hours: Int {
+  public var hour: Int {
     return Calendar.current.component(.hour, from: self)
   }
 
-  public var days: Int {
+  public var day: Int {
     return Calendar.current.component(.day, from: self)
   }
 
-  public var months: Int {
+  public var month: Int {
     return Calendar.current.component(.month, from: self)
   }
 
-  public var years: Int {
+  public var year: Int {
     return Calendar.current.component(.year, from: self)
   }
 
