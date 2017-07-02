@@ -52,10 +52,21 @@ class DateSpec: XCTestCase {
   }
 
   func testStartOf() {
-    let date = Date(year: 2016, month: 7, day: 31, hour: 12, minute: 22)
+    let date = Date(year: 2016, month: 7, day: 31, hour: 12, minute: 22, second: 20, nanosecond: 323)
+    print(date.timeIntervalSince1970)
     expect(date.start(of: .hour)) == Date(year: 2016, month: 7, day: 31, hour: 12, minute: 0)
     expect(date.start(of: .day)) == Date(year: 2016, month: 7, day: 31)
     expect(date.start(of: .month)) == Date(year: 2016, month: 7, day: 1)
+    expect(date.start(of: .minute)) == Date(year: 2016, month: 7, day: 31, hour: 12, minute: 22, second: 0)
+    expect(date.start(of: .second)) == Date(year: 2016, month: 7, day: 31, hour: 12, minute: 22, second: 20)
+
+    let formatter = DateFormatter()
+    formatter.locale = Locale(identifier: "en_US_POSIX")
+    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+    guard let fractional = formatter.date(from: "2017-06-19T12:02:48.363Z") else { return fail() }
+    expect(formatter.string(from: fractional)) == "2017-06-19T12:02:48.363Z"
+    expect(formatter.string(from: fractional.start(of: .second))) == "2017-06-19T12:02:48.000Z"
+    expect(formatter.string(from: fractional.start(of: .minute))) == "2017-06-19T12:02:00.000Z"
   }
 
   func testEndOf() {
@@ -86,6 +97,13 @@ class DateSpec: XCTestCase {
       Calendar.current.startOfDay(for: Date()).addingTimeInterval(86400)
     expect((Date() + 1.days).isInTomorrow).to(beTruthy())
     expect(Date().isInTomorrow).to(beFalsy())
+  }
+
+  func testSameDay() {
+    let date = Date(year: 2016, month: 7, day: 15, hour: 12, minute: 22)
+    expect(date.isSameDay(as: date.start(of: .day))).to(beTruthy())
+    expect(date.isSameDay(as: date.end(of: .day))).to(beTruthy())
+    expect(date.isSameDay(as: date.start(of: .day) + 1.days)).to(beFalsy())
   }
 
   func testStringToDate() {
