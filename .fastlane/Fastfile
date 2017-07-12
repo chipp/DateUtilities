@@ -15,7 +15,7 @@ lane :release do |options|
   bump ||= 'patch'
   new_version(type: bump, increase: true, path: podspec)
   tag(message: '')
-  push
+  pod_push
 end
 
 lane :patch do |options|
@@ -69,7 +69,7 @@ lane :lint do
   pod_lib_lint(
     use_bundle_exec: true,
     verbose: true,
-    fail_fast: true    
+    fail_fast: true
   )
 end
 
