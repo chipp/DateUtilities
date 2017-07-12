@@ -12,7 +12,7 @@ Date extensions: TimeInterval addition, date comparison
   s.author           = {
     "Vladimir Burdukov" => "chippcheg@gmail.com"
   }
-  s.source           = { :git => "git@github.com:chipp/DateUtilities", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/chipp/DateUtilities.git", :tag => s.version.to_s }
   s.ios.deployment_target = '8.0'
   s.tvos.deployment_target = '9.0'
   s.osx.deployment_target = '10.10'

@@ -34,6 +34,36 @@ xcode-select --install
 fastlane test
 ```
 
+### release
+```
+fastlane release
+```
+
+### patch
+```
+fastlane patch
+```
+
+### minor
+```
+fastlane minor
+```
+
+### major
+```
+fastlane major
+```
+
+### tag
+```
+fastlane tag
+```
+
+### lint
+```
+fastlane lint
+```
+
 
 ----
 
