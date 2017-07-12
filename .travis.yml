@@ -1,0 +1,12 @@
+language: objective-c
+osx_image: xcode8
+
+env:
+  - SCHEME=iOSTests   DESTINATION='platform=iOS Simulator,name=iPhone 7'
+  - SCHEME=macOSTests DESTINATION='platform=macOS'
+  - SCHEME=tvOSTests  DESTINATION='platform=tvOS Simulator,name=Apple TV 1080p'
+
+script:
+  - bundle install
+  - bundle exec pod install
+  - env NSUnbufferedIO=YES xcodebuild -workspace Tests.xcworkspace -scheme "$SCHEME" build test | xcpretty
