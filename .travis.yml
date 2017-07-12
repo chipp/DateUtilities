@@ -1,12 +1,20 @@
 language: objective-c
 osx_image: xcode8
 
+cache:
+  directories:
+    - $HOME/.cocoapods/
+
+before_install:
+- gem install cocoapods-acknowledgements
+- gem install cocoapods
+- pod repo update
+
 env:
   - SCHEME=iOSTests   DESTINATION='platform=iOS Simulator,name=iPhone 7'
   - SCHEME=macOSTests DESTINATION='platform=macOS'
   - SCHEME=tvOSTests  DESTINATION='platform=tvOS Simulator,name=Apple TV 1080p'
 
 script:
-  - bundle install
-  - bundle exec pod install --repo-update
   - env NSUnbufferedIO=YES xcodebuild -workspace Tests.xcworkspace -scheme "$SCHEME" build test | xcpretty
+
