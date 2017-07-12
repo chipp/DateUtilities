@@ -1,0 +1,9 @@
+lane :test do
+  ENV['SCAN_DERIVED_DATA_PATH'] = 'build'
+  Actions.sh "rm -rf ../build"
+  scan(scheme: 'iOSTests', device: 'iPhone 7')
+  Actions.sh "rm -rf ../build"
+  scan(scheme: 'tvOSTests', device: 'Apple TV 1080p')
+  Actions.sh "rm -rf ../build"
+  Actions.sh "env NSUnbufferedIO=YES xcodebuild -workspace ../Tests.xcworkspace -scheme macOSTests -derivedDataPath ../build build test | xcpretty"
+end

@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary          = "Simple swift Date extensions"
 
   s.description      = <<-DESC
-Date class extensions: TimeInterval addition, date comparison
+Date extensions: TimeInterval addition, date comparison
                        DESC
 
   s.license          = { :type => "MIT" }
@@ -15,6 +15,7 @@ Date class extensions: TimeInterval addition, date comparison
   s.source           = { :git => "git@github.com:chipp/DateUtilities", :tag => s.version.to_s }
   s.ios.deployment_target = '8.0'
   s.tvos.deployment_target = '9.0'
+  s.osx.deployment_target = '10.10'
   s.source_files = 'Sources/*.swift'
 
 end
