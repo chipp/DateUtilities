@@ -12,9 +12,9 @@ before_install:
 
 env:
   - SCHEME=iOSTests   DESTINATION='platform=iOS Simulator,name=iPhone 7'
-  - SCHEME=macOSTests DESTINATION='platform=macOS'
+  - SCHEME=macOSTests DESTINATION='platform=macOS,arch=x86_64'
   - SCHEME=tvOSTests  DESTINATION='platform=tvOS Simulator,name=Apple TV 1080p'
 
 script:
-  - env NSUnbufferedIO=YES xcodebuild -workspace Tests.xcworkspace -scheme "$SCHEME" build test | xcpretty
+  - env NSUnbufferedIO=YES xcodebuild -workspace Tests.xcworkspace -scheme "$SCHEME" -destination $DESTINATION build test | xcpretty
 
