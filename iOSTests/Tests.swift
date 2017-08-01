@@ -12,20 +12,22 @@ import DateUtilities
 
 class DateSpec: XCTestCase {
 
+  let timeZone = TimeZone(identifier: "Europe/Minsk")
+
   func testInitializer() {
-    let month = Date(year: 2016, month: 7)
+    let month = Date(year: 2016, month: 7, in: timeZone)
     expect(month.timeIntervalSinceReferenceDate) == 489013200
 
-    let day = Date(year: 2016, month: 7, day: 31)
+    let day = Date(year: 2016, month: 7, day: 31, in: timeZone)
     expect(day.timeIntervalSinceReferenceDate) == 491605200
 
-    let hour = Date(year: 2016, month: 7, day: 31, hour: 12)
+    let hour = Date(year: 2016, month: 7, day: 31, hour: 12, in: timeZone)
     expect(hour.timeIntervalSinceReferenceDate) == 491648400
 
-    let minute = Date(year: 2016, month: 7, day: 31, hour: 12, minute: 35)
+    let minute = Date(year: 2016, month: 7, day: 31, hour: 12, minute: 35, in: timeZone)
     expect(minute.timeIntervalSinceReferenceDate) == 491650500
 
-    let second = Date(year: 2016, month: 7, day: 31, hour: 12, minute: 35, second: 23)
+    let second = Date(year: 2016, month: 7, day: 31, hour: 12, minute: 35, second: 23, in: timeZone)
     expect(second.timeIntervalSinceReferenceDate) == 491650523
   }
 
@@ -44,7 +46,7 @@ class DateSpec: XCTestCase {
   }
 
   func testAddition() {
-    let add = Date.init(year: 2016, month: 7, day: 31, hour: 12) + 1.minutes & 30.seconds
+    let add = Date(year: 2016, month: 7, day: 31, hour: 12) + 1.minutes & 30.seconds
     expect(add) == Date(year: 2016, month: 7, day: 31, hour: 12, minute: 1, second: 30)
 
     let subtract = Date(year: 2017, month: 2, day: 21) - 14.days
@@ -107,8 +109,8 @@ class DateSpec: XCTestCase {
   }
 
   func testStringToDate() {
-    expect("2016-03-06 19:00:00".toDate(format: "yyyy-MM-dd HH:mm:ss", timezone: "GMT")) ==
-      Date(year: 2016, month: 3, day: 6, hour: 22, minute: 0)
+    expect("2016-03-06 19:00:00".toDate(format: "yyyy-MM-dd HH:mm:ss", timeZone: "GMT")) ==
+      Date(year: 2016, month: 3, day: 6, hour: 22, minute: 0, in: timeZone)
     expect("2016-03-06 19:00:00".toDate(format: "yyyy-MM-dd HH:mm:ss")) ==
       Date(year: 2016, month: 3, day: 6, hour: 19, minute: 0)
   }

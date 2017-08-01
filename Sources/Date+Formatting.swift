@@ -55,12 +55,22 @@ public extension Date {
 
 public extension String {
 
+  @available(*, unavailable, renamed: "toDate(dateFormatter:timeZone:)")
   public func toDate(dateFormatter formatter: DateFormatter, timezone: String? = nil) -> Date? {
-    return Date.date(fromString: self, dateFormatter: formatter, timezone: timezone)
+    return nil
   }
 
+  @available(*, unavailable, renamed: "toDate(format:timeZone:locale:)")
   public func toDate(format: String, timezone: String? = nil, locale: Locale? = nil) -> Date? {
-    return Date.date(fromString: self, format: format, timezone: timezone, locale: locale)
+    return nil
+  }
+
+  public func toDate(dateFormatter formatter: DateFormatter, timeZone: String? = nil) -> Date? {
+    return Date.date(fromString: self, dateFormatter: formatter, timezone: timeZone)
+  }
+
+  public func toDate(format: String, timeZone: String? = nil, locale: Locale? = nil) -> Date? {
+    return Date.date(fromString: self, format: format, timezone: timeZone, locale: locale)
   }
 
 }
