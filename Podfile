@@ -4,7 +4,7 @@ use_frameworks!
 
 abstract_target 'Common' do
   pod 'DateUtilities', :path => '.'
-  pod 'Nimble', '~> 7.0'
+  pod 'Nimble', :git => 'https://github.com/Quick/Nimble.git'
 
   target 'iOSTests' do
     platform :ios, '8.0'
