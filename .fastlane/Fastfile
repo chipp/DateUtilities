@@ -1,11 +1,12 @@
 lane :test do
-  ENV['SCAN_DERIVED_DATA_PATH'] = 'build'
-  Actions.sh "rm -rf ../build"
-  scan(scheme: 'iOSTests', device: 'iPhone 7')
-  Actions.sh "rm -rf ../build"
-  scan(scheme: 'tvOSTests', device: 'Apple TV 1080p')
-  Actions.sh "rm -rf ../build"
-  Actions.sh "env NSUnbufferedIO=YES xcodebuild -workspace ../Tests.xcworkspace -scheme macOSTests -derivedDataPath ../build build test | xcpretty"
+  FileUtils.cd ".." do
+    ["iOSTests", "tvOSTests", "macOSTests"].each do |scheme|
+      destination = Actions.sh "./scripts/destination.sh #{scheme}"
+      destination.strip!
+      command = "set -o pipefail && env NSUnbufferedIO=YES xcodebuild -workspace Tests.xcworkspace -scheme #{scheme} -derivedDataPath build -destination \"#{destination}\" build test | xcpretty"
+      FastlaneCore::CommandExecutor.execute(command: command, print_all: true, print_command: true)
+    end
+  end
 end
 
 lane :release do |options|
