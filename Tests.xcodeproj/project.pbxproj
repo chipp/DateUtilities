@@ -104,7 +104,7 @@
 		B59E9B9B1EC361C1002018AE = {
 			isa = PBXGroup;
 			children = (
-				B59E9BA81EC361EC002018AE /* iOS */,
+				B59E9BA81EC361EC002018AE /* iOSTests */,
 				B56E8B8D1F16615600D5F227 /* tvOSTests */,
 				B56E8B9A1F1661A200D5F227 /* macOSTests */,
 				B59E9BA71EC361EC002018AE /* Products */,
@@ -123,13 +123,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B59E9BA81EC361EC002018AE /* iOS */ = {
+		B59E9BA81EC361EC002018AE /* iOSTests */ = {
 			isa = PBXGroup;
 			children = (
 				B59E9BA91EC361EC002018AE /* Tests.swift */,
 				B59E9BAB1EC361EC002018AE /* Info.plist */,
 			);
-			name = iOS;
 			path = iOSTests;
 			sourceTree = "<group>";
 		};
@@ -209,14 +208,17 @@
 				TargetAttributes = {
 					B56E8B8B1F16615600D5F227 = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Manual;
 					};
 					B56E8B981F1661A200D5F227 = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					B59E9BA51EC361EC002018AE = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -532,7 +534,7 @@
 				SDKROOT = appletvos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TVOS_DEPLOYMENT_TARGET = 10.2;
 			};
 			name = Debug;
@@ -581,7 +583,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TVOS_DEPLOYMENT_TARGET = 10.2;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -640,7 +642,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -689,7 +691,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -759,7 +761,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -809,7 +811,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
