@@ -1,27 +1,19 @@
 PODS:
   - DateUtilities (1.0.0)
-  - Nimble (7.0.1)
+  - Nimble (7.0.2)
 
 DEPENDENCIES:
   - DateUtilities (from `.`)
-  - Nimble (from `git@github.com:Quick/Nimble`, commit `a63252b16eba6cdebec4e4936388c90552165a68`)
+  - Nimble (~> 7.0)
 
 EXTERNAL SOURCES:
   DateUtilities:
     :path: .
-  Nimble:
-    :commit: a63252b16eba6cdebec4e4936388c90552165a68
-    :git: git@github.com:Quick/Nimble
-
-CHECKOUT OPTIONS:
-  Nimble:
-    :commit: a63252b16eba6cdebec4e4936388c90552165a68
-    :git: git@github.com:Quick/Nimble
 
 SPEC CHECKSUMS:
   DateUtilities: 52d56188488b94c3d4e396f358c1be7458780516
-  Nimble: 1b6670c36e5750169b9e4cc2e9cfa82a7603c69e
+  Nimble: bfe1f814edabba69ff145cb1283e04ed636a67f2
 
-PODFILE CHECKSUM: 64bf835fef4172b0f1b2f509409185217b86697a
+PODFILE CHECKSUM: 9e826f68c21f77bcc5cdab055755cbbd497d4d52
 
 COCOAPODS: 1.3.1
