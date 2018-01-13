@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "DateUtilities"
-  s.version          = "1.0.0"
+  s.version          = "1.0.1"
   s.summary          = "Simple swift Date extensions"
 
   s.description      = <<-DESC
