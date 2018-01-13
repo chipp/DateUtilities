@@ -9,7 +9,7 @@ public extension Date {
   public func start(of unit: Calendar.Component) -> Date {
     var date = Date()
     var interval: TimeInterval = 0
-    guard Calendar.current.dateInterval(of: unit, start: &date, interval: &interval, for: self) else {
+    guard Context.calendar.dateInterval(of: unit, start: &date, interval: &interval, for: self) else {
       assertionFailure()
       return date
     }
@@ -20,7 +20,7 @@ public extension Date {
   public func end(of unit: Calendar.Component) -> Date {
     var date = Date()
     var interval: TimeInterval = 0
-    guard Calendar.current.dateInterval(of: unit, start: &date, interval: &interval, for: self) else {
+    guard Context.calendar.dateInterval(of: unit, start: &date, interval: &interval, for: self) else {
       assertionFailure()
       return date
     }

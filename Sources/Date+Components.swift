@@ -61,31 +61,31 @@ public enum Weekday: Int {
 public extension Date {
 
   public var second: Int {
-    return Calendar.current.component(.second, from: self)
+    return Context.calendar.component(.second, from: self)
   }
 
   public var minute: Int {
-    return Calendar.current.component(.minute, from: self)
+    return Context.calendar.component(.minute, from: self)
   }
 
   public var hour: Int {
-    return Calendar.current.component(.hour, from: self)
+    return Context.calendar.component(.hour, from: self)
   }
 
   public var day: Int {
-    return Calendar.current.component(.day, from: self)
+    return Context.calendar.component(.day, from: self)
   }
 
   public var month: Int {
-    return Calendar.current.component(.month, from: self)
+    return Context.calendar.component(.month, from: self)
   }
 
   public var year: Int {
-    return Calendar.current.component(.year, from: self)
+    return Context.calendar.component(.year, from: self)
   }
 
   public var weekday: Weekday {
-    guard let weekday = Weekday(rawValue: (Calendar.current.component(.weekday, from: self) + 12) % 7) else {
+    guard let weekday = Weekday(rawValue: (Context.calendar.component(.weekday, from: self) + 12) % 7) else {
       assertionFailure()
       return .monday
     }
@@ -97,7 +97,7 @@ public extension Date {
 // MARK: - Operators
 
 public func + (lhs: Date, rhs: DateComponents) -> Date {
-  guard let result = Calendar.current.date(byAdding: rhs, to: lhs) else {
+  guard let result = Context.calendar.date(byAdding: rhs, to: lhs) else {
     assertionFailure("can't add components \(rhs) to date \(lhs)")
     return Date()
   }
@@ -147,7 +147,7 @@ public func & (lhs: DateComponents, rhs: DateComponents) -> DateComponents {
 public extension Date {
 
   public func difference(date: Date, unitFlags: Set<Calendar.Component>) -> DateComponents? {
-    return Calendar.current.dateComponents(unitFlags, from: self, to: date)
+    return Context.calendar.dateComponents(unitFlags, from: self, to: date)
   }
 
 }
