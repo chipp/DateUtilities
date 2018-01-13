@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: .
 
 SPEC CHECKSUMS:
-  DateUtilities: 52d56188488b94c3d4e396f358c1be7458780516
+  DateUtilities: bdabf3586afdf71113a2b64f2996a1cde4a34dd4
   Nimble: bfe1f814edabba69ff145cb1283e04ed636a67f2
 
 PODFILE CHECKSUM: 9e826f68c21f77bcc5cdab055755cbbd497d4d52
