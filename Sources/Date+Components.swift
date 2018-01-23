@@ -56,6 +56,10 @@ public extension Int {
 
 public enum Weekday: Int {
   case monday = 0, tuesday, wednesday, thursday, friday, saturday, sunday
+
+  public var foundationValue: Int {
+    return (rawValue + 1) % 7 + 1
+  }
 }
 
 public extension Date {

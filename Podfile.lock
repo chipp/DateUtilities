@@ -1,5 +1,5 @@
 PODS:
-  - DateUtilities (1.0.0)
+  - DateUtilities (1.0.1)
   - Nimble (7.0.2)
 
 DEPENDENCIES:
@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: .
 
 SPEC CHECKSUMS:
-  DateUtilities: bdabf3586afdf71113a2b64f2996a1cde4a34dd4
+  DateUtilities: 6c3e5efb9fe582617ccdb7a537133357dbb178f9
   Nimble: bfe1f814edabba69ff145cb1283e04ed636a67f2
 
 PODFILE CHECKSUM: 9e826f68c21f77bcc5cdab055755cbbd497d4d52

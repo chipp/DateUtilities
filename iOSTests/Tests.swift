@@ -137,4 +137,14 @@ class DateSpec: XCTestCase {
     expect(result) == components
   }
 
+  func testWeekdayFoundationMapping() {
+    expect(Weekday.monday.foundationValue) == 2
+    expect(Weekday.tuesday.foundationValue) == 3
+    expect(Weekday.wednesday.foundationValue) == 4
+    expect(Weekday.thursday.foundationValue) == 5
+    expect(Weekday.friday.foundationValue) == 6
+    expect(Weekday.saturday.foundationValue) == 7
+    expect(Weekday.sunday.foundationValue) == 1
+  }
+
 }
