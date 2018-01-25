@@ -11,9 +11,9 @@ EXTERNAL SOURCES:
     :path: .
 
 SPEC CHECKSUMS:
-  DateUtilities: 6c3e5efb9fe582617ccdb7a537133357dbb178f9
+  DateUtilities: bd45aea125ce81dadb6b13b4ea07df2df75d55f7
   Nimble: bfe1f814edabba69ff145cb1283e04ed636a67f2
 
 PODFILE CHECKSUM: 9e826f68c21f77bcc5cdab055755cbbd497d4d52
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.4.0
