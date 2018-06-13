@@ -6,9 +6,13 @@ DEPENDENCIES:
   - DateUtilities (from `.`)
   - Nimble (~> 7.0)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Nimble
+
 EXTERNAL SOURCES:
   DateUtilities:
-    :path: .
+    :path: "."
 
 SPEC CHECKSUMS:
   DateUtilities: bd45aea125ce81dadb6b13b4ea07df2df75d55f7
@@ -16,4 +20,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 9e826f68c21f77bcc5cdab055755cbbd497d4d52
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3
