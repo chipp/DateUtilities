@@ -270,7 +270,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Common-tvOSTests/Pods-Common-tvOSTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Common-tvOSTests/Pods-Common-tvOSTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/DateUtilities-tvOS/DateUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble-tvOS/Nimble.framework",
 			);
@@ -281,7 +281,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Common-tvOSTests/Pods-Common-tvOSTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Common-tvOSTests/Pods-Common-tvOSTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		1EDF1805CBA33BC937AEBF6A /* [CP] Check Pods Manifest.lock */ = {
@@ -344,7 +344,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Common-macOSTests/Pods-Common-macOSTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Common-macOSTests/Pods-Common-macOSTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/DateUtilities-macOS/DateUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble-macOS/Nimble.framework",
 			);
@@ -355,7 +355,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Common-macOSTests/Pods-Common-macOSTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Common-macOSTests/Pods-Common-macOSTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AE426B3738C8381B065A7BA5 /* [CP] Embed Pods Frameworks */ = {
@@ -364,7 +364,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Common-iOSTests/Pods-Common-iOSTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Common-iOSTests/Pods-Common-iOSTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/DateUtilities-iOS/DateUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble-iOS/Nimble.framework",
 			);
@@ -375,7 +375,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Common-iOSTests/Pods-Common-iOSTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Common-iOSTests/Pods-Common-iOSTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B56E8BA21F16655700D5F227 /* ShellScript */ = {
