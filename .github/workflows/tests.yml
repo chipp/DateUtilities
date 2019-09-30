@@ -4,15 +4,20 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: macOS-10.14
     strategy:
       matrix:
         scheme: [iOSTests, tvOSTests, macOSTests]
-    
+
     steps:
-    - uses: actions/checkout@v1
-    - name: Run a multi-line script
-      run: |
-        echo ${{ matrix.scheme }},
-        echo test, and deploy your project.
+      - uses: actions/checkout@v1
+      - name: Prepare environment
+        run: |
+          bundle install
+          bundle exec pod install --repo-update
+      - name: Test
+        run: |
+          export DESTINATION="$(./scripts/destination.sh $SCHEME)"
+          echo "$DESTINATION"
+          xcrun simctl list
+          set -o pipefail && env NSUnbufferedIO=YES xcodebuild -workspace Tests.xcworkspace -scheme "$SCHEME" -destination "$DESTINATION" build test | xcpretty
