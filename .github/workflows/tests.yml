@@ -17,7 +17,5 @@ jobs:
           bundle exec pod install --repo-update
       - name: Test
         run: |
-          export DESTINATION="$(./scripts/destination.sh $SCHEME)"
-          echo "$DESTINATION"
           xcrun simctl list
-          set -o pipefail && env NSUnbufferedIO=YES xcodebuild -workspace Tests.xcworkspace -scheme "$SCHEME" -destination "$DESTINATION" build test | xcpretty
+          set -o pipefail && env NSUnbufferedIO=YES xcodebuild -workspace Tests.xcworkspace -scheme "${{ matrix.scheme }}" -destination "$(./scripts/destination.sh ${{ matrix.scheme }})" build test | xcpretty
