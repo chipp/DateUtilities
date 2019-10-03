@@ -21,7 +21,7 @@ jobs:
           bundle exec pod install --repo-update
       - name: Choose device
         id: choose-device
-        uses: chipp/choose-device@master
+        uses: chipp/choose-device@v1
         with:
           os: ${{ matrix.os.name }}
       - name: Test
