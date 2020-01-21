@@ -1,18 +1,5 @@
-lane :test do
-  xcversion(version: '~> 10.1')
-  FileUtils.cd ".." do
-    ["iOSTests", "tvOSTests", "macOSTests"].each do |scheme|
-      destination = Actions.sh "./scripts/destination.sh #{scheme}"
-      destination.strip!
-      command = "set -o pipefail && env NSUnbufferedIO=YES xcodebuild -workspace Tests.xcworkspace -scheme #{scheme} -derivedDataPath build -destination \"#{destination}\" build test | xcpretty"
-      FastlaneCore::CommandExecutor.execute(command: command, print_all: true, print_command: true)
-    end
-  end
-end
-
 lane :release do |options|
   cocoapods
-  test
   bump = options[:bump]
   bump ||= 'patch'
   new_version(type: bump, increase: true, path: podspec)
