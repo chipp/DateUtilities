@@ -9,12 +9,14 @@ jobs:
       matrix:
         os:
           [
-            { "type": "iOS", "name": "iOS 12.4" },
-            { "type": "tvOS", "name": "tvOS 12.4" },
-            { "type": "iOS", "name": "iOS 13.3" },
-            { "type": "tvOS", "name": "tvOS 13.3" },
-            { "type": "macOS", "name": "macOS 10.15" },
+            { "type": "iOS", "name": "iOS 12.4", "xcode": "11" },
+            { "type": "tvOS", "name": "tvOS 12.4", "xcode": "11" },
+            { "type": "iOS", "name": "iOS 13.3", "xcode": "11.3" },
+            { "type": "tvOS", "name": "tvOS 13.3", "xcode": "11.3" },
+            { "type": "macOS", "name": "macOS 10.15", "xcode": "11.3" },
           ]
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_${{ matrix.os.xcode }}.app
 
     steps:
       - uses: actions/checkout@v1
@@ -25,13 +27,9 @@ jobs:
       - name: Choose device
         id: choose-device
         uses: chipp/choose-device@v1
-        env:
-          DEVELOPER_DIR: /Applications/Xcode_11.3.app
         with:
           os: ${{ matrix.os.name }}
       - name: Test
-        env:
-          DEVELOPER_DIR: /Applications/Xcode_11.3.app
         run: |
           xcrun simctl list
           set -o pipefail && env NSUnbufferedIO=YES xcodebuild -workspace Tests.xcworkspace -scheme "${{ matrix.os.type }}Tests" -destination "${{ steps.choose-device.outputs.destination }}" build test | xcpretty
